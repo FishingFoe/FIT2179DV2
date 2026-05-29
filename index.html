@@ -122,9 +122,10 @@
   <h1>Taste of Malaysia</h1>
   <p class="subtitle">
     Exploring how Malaysian food reflects culture, tourism and lifestyle through
-    interactive data visualisations. This draft combines dish popularity, tourism
-    trends, state comparisons, spice levels, meal costs and a Malaysia map to tell
-    a clearer story about the country’s food identity.
+    interactive data visualisations. This final version combines eleven visualisations
+    covering dish popularity, tourism trends, state comparisons, spice levels, meal
+    costs, cultural origins and a Malaysia map to tell a clearer story about the
+    country’s food identity.
   </p>
 </div>
 
@@ -133,8 +134,8 @@
   <h2>1. Top Malaysian Dishes</h2>
   <p>
     This chart compares the popularity of iconic Malaysian dishes. The colour shows
-    each dishs cultural origin, helping viewers understand how Malay, Chinese,
-    Indian and Peranakan influences shape Malaysias food culture.
+    each dish’s cultural origin, helping viewers understand how Malay, Chinese,
+    Indian and Peranakan influences shape Malaysia’s food culture.
   </p>
   <div id="chart1"></div>
 </div>
@@ -195,14 +196,65 @@
 
 </div>
 
+<div class="chart">
+  <span class="section-tag">Spice vs Popularity</span>
+  <h2>7. Popularity and Spice Level of Malaysian Dishes</h2>
+  <p>
+    This scatter plot compares dish popularity with spice level. It helps show
+    whether highly popular Malaysian dishes are usually mild, moderate or spicy.
+  </p>
+  <div id="chart7"></div>
+</div>
+
+<div class="chart">
+  <span class="section-tag">Cultural Origins</span>
+  <h2>8. Cultural Origin Breakdown of Malaysian Dishes</h2>
+  <p>
+    This donut chart summarises the cultural origins represented in the food dataset.
+    It highlights how Malaysia’s food identity is shaped by multiple communities.
+  </p>
+  <div id="chart8"></div>
+</div>
+
+<div class="chart">
+  <span class="section-tag">Tourism Ranking</span>
+  <h2>9. Ranking of Tourism Hotspots by State</h2>
+  <p>
+    This horizontal bar chart ranks states by tourist numbers, making it easier to
+    compare the strongest tourism and food-culture destinations.
+  </p>
+  <div id="chart9"></div>
+</div>
+
+<div class="chart">
+  <span class="section-tag">Meal Components</span>
+  <h2>10. Cost Contribution by Meal Component</h2>
+  <p>
+    This bar chart shows which parts of a Malaysian meal contribute most to the
+    total cost, adding an economic perspective to the food story.
+  </p>
+  <div id="chart10"></div>
+</div>
+
+<div class="chart">
+  <span class="section-tag">Recovery Pattern</span>
+  <h2>11. Tourism Recovery Pattern</h2>
+  <p>
+    This area chart highlights the overall rise, fall and recovery of Malaysian
+    tourism over time, supporting the narrative that food culture is connected to
+    travel and visitor activity.
+  </p>
+  <div id="chart11"></div>
+</div>
+
 <div class="conclusion">
   <span class="section-tag">Final Insight</span>
   <h2>Conclusion</h2>
   <p>
-    Overall, this draft shows that Malaysian food is not only about taste, but also
-    about culture, tourism, lifestyle and economy. The next stage will add stronger
-    annotations, improve interaction, and refine the layout into a polished final
-    scrolling data story.
+    Overall, this final visualisation shows that Malaysian food is not only about
+    taste, but also about culture, tourism, lifestyle and economy. The combination
+    of maps, rankings, time-series charts, heatmaps and categorical breakdowns
+    creates a complete scrolling data story about Malaysia’s food identity.
   </p>
 </div>
 
@@ -551,6 +603,291 @@ const mapChart = {
 };
 
 vegaEmbed("#chart6", mapChart);
+
+const scatterChart = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 350,
+  "background": "#ffffff",
+
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 11,
+      "titleFontSize": 13
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 11,
+      "titleFontSize": 13
+    }
+  },
+
+  "data": {
+    "url": "data/food.csv"
+  },
+
+  "mark": {
+    "type": "circle",
+    "size": 180,
+    "opacity": 0.8,
+    "stroke": "black",
+    "strokeWidth": 1
+  },
+
+  "encoding": {
+    "x": {
+      "field": "SpiceLevel",
+      "type": "quantitative",
+      "title": "Spice Level"
+    },
+    "y": {
+      "field": "Popularity",
+      "type": "quantitative",
+      "title": "Popularity"
+    },
+    "color": {
+      "field": "Origin",
+      "type": "nominal"
+    },
+    "tooltip": [
+      {"field": "Dish"},
+      {"field": "Origin"},
+      {"field": "SpiceLevel"},
+      {"field": "Popularity"}
+    ]
+  }
+};
+
+vegaEmbed("#chart7", scatterChart);
+
+
+const originDonutChart = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 450,
+  "height": 350,
+  "background": "#ffffff",
+
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 11,
+      "titleFontSize": 13
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 11,
+      "titleFontSize": 13
+    }
+  },
+
+  "data": {
+    "url": "data/food.csv"
+  },
+
+  "mark": {
+    "type": "arc",
+    "innerRadius": 70
+  },
+
+  "encoding": {
+    "theta": {
+      "aggregate": "count",
+      "type": "quantitative",
+      "title": "Number of Dishes"
+    },
+    "color": {
+      "field": "Origin",
+      "type": "nominal"
+    },
+    "tooltip": [
+      {"field": "Origin"},
+      {"aggregate": "count", "type": "quantitative", "title": "Number of Dishes"}
+    ]
+  }
+};
+
+vegaEmbed("#chart8", originDonutChart);
+
+
+const tourismRankingChart = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 650,
+  "height": 400,
+  "background": "#ffffff",
+
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 11,
+      "titleFontSize": 13
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 11,
+      "titleFontSize": 13
+    }
+  },
+
+  "data": {
+    "url": "data/tourism.csv"
+  },
+
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 5
+  },
+
+  "encoding": {
+    "y": {
+      "field": "State",
+      "type": "nominal",
+      "sort": "-x",
+      "title": "State"
+    },
+    "x": {
+      "field": "Tourists",
+      "type": "quantitative",
+      "title": "Tourists"
+    },
+    "color": {
+      "field": "Tourists",
+      "type": "quantitative",
+      "scale": {"scheme": "oranges"},
+      "legend": null
+    },
+    "tooltip": [
+      {"field": "State"},
+      {"field": "Tourists"}
+    ]
+  }
+};
+
+vegaEmbed("#chart9", tourismRankingChart);
+
+
+const mealBarChart = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 350,
+  "background": "#ffffff",
+
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 11,
+      "titleFontSize": 13
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 11,
+      "titleFontSize": 13
+    }
+  },
+
+  "data": {
+    "url": "data/meal.csv"
+  },
+
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 5
+  },
+
+  "encoding": {
+    "x": {
+      "field": "Category",
+      "type": "nominal",
+      "sort": "-y",
+      "title": "Meal Component"
+    },
+    "y": {
+      "field": "Cost",
+      "type": "quantitative",
+      "title": "Cost"
+    },
+    "color": {
+      "field": "Category",
+      "type": "nominal",
+      "legend": null
+    },
+    "tooltip": [
+      {"field": "Category"},
+      {"field": "Cost"}
+    ]
+  }
+};
+
+vegaEmbed("#chart10", mealBarChart);
+
+
+const recoveryAreaChart = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 350,
+  "background": "#ffffff",
+
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 11,
+      "titleFontSize": 13
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 11,
+      "titleFontSize": 13
+    }
+  },
+
+  "data": {
+    "url": "data/growth.csv"
+  },
+
+  "mark": {
+    "type": "area",
+    "line": true,
+    "point": true,
+    "opacity": 0.65
+  },
+
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "ordinal",
+      "title": "Year"
+    },
+    "y": {
+      "field": "Tourists",
+      "type": "quantitative",
+      "title": "Tourists"
+    },
+    "color": {
+      "value": "#f28e2b"
+    },
+    "tooltip": [
+      {"field": "Year"},
+      {"field": "Tourists"}
+    ]
+  }
+};
+
+vegaEmbed("#chart11", recoveryAreaChart);
 
 </script>
 
