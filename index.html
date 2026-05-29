@@ -29,7 +29,7 @@
     }
 
     .hero {
-      padding: 55px 45px;
+      padding: 42px 40px;
       margin-bottom: 45px;
       border-radius: 28px;
       background:
@@ -41,14 +41,14 @@
 
     h1 {
       color: #ffae22;
-      font-size: 52px;
+      font-size: 48px;
       margin: 0 0 15px 0;
       letter-spacing: -1px;
     }
 
     .subtitle {
-      font-size: 21px;
-      line-height: 1.7;
+      font-size: 18px;
+      line-height: 1.55;
       color: #f2e7d8;
       max-width: 920px;
       margin: 0;
@@ -61,15 +61,15 @@
     }
 
     p {
-      font-size: 17px;
-      line-height: 1.65;
+      font-size: 16px;
+      line-height: 1.5;
       color: #dddddd;
       max-width: 900px;
     }
 
     .chart {
       margin-bottom: 42px;
-      padding: 32px;
+      padding: 28px;
       border-radius: 24px;
       background: rgba(255, 255, 255, 0.07);
       border: 1px solid rgba(255, 255, 255, 0.12);
@@ -121,11 +121,9 @@
 <div class="hero">
   <h1>Taste of Malaysia</h1>
   <p class="subtitle">
-    Exploring how Malaysian food reflects culture, tourism and lifestyle through
-    interactive data visualisations. This final version combines eleven visualisations
-    covering dish popularity, tourism trends, state comparisons, spice levels, meal
-    costs, cultural origins and a Malaysia map to tell a clearer story about the
-    country’s food identity.
+    Malaysian food reflects culture, tourism and everyday lifestyle.
+    This story uses eleven interactive visualisations to compare dishes,
+    travel patterns, costs, spice levels, cultural origins and geography.
   </p>
 </div>
 
@@ -133,9 +131,8 @@
   <span class="section-tag">Cuisine Popularity</span>
   <h2>1. Top Malaysian Dishes</h2>
   <p>
-    This chart compares the popularity of iconic Malaysian dishes. The colour shows
-    each dish’s cultural origin, helping viewers understand how Malay, Chinese,
-    Indian and Peranakan influences shape Malaysia’s food culture.
+    This chart ranks iconic Malaysian dishes by popularity.
+    Colour separates the dishes by cultural origin.
   </p>
   <div id="chart1"></div>
 </div>
@@ -144,9 +141,8 @@
   <span class="section-tag">Tourism Trend</span>
   <h2>2. Tourism Growth</h2>
   <p>
-    This line chart shows tourism growth over time. The sharp drop during 2020/2021
-    reflects the impact of travel restrictions, while the recovery afterwards shows
-    how tourism gradually returned.
+    This line chart shows tourism change over time.
+    The 2020–2021 fall highlights the travel disruption period.
   </p>
   <div id="chart2"></div>
 </div>
@@ -155,42 +151,38 @@
   <span class="section-tag">Food Economy</span>
   <h2>3. Meal Cost Breakdown</h2>
   <p>
-    This donut chart breaks down the approximate cost of a typical Malaysian meal.
-    It shows how protein, rice, drinks, vegetables and dessert contribute to the
-    overall eating experience.
+    This donut chart breaks down an estimated Malaysian meal cost.
+    The centre label shows the total average meal price.
   </p>
   <div id="chart3"></div>
 </div>
 
 <div class="chart">
   <span class="section-tag">Flavour Profile</span>
-  <h2>4. Spice Level Heatmap</h2>
+  <h2>4. Spice Level by Dish</h2>
   <p>
-    This heatmap shows spice levels across different dishes and cultural origins.
-    Darker colours represent stronger spice intensity, making it easier to compare
-    flavour profiles across Malaysian cuisine.
+    This bar chart compares spice levels across dishes.
+    A sequential orange scale shows stronger flavour intensity.
   </p>
   <div id="chart4"></div>
 </div>
 
 <div class="chart">
   <span class="section-tag">State Comparison</span>
-  <h2>5. Tourism by State</h2>
+  <h2>5. Ranked Tourism Hotspots</h2>
   <p>
-    This bar chart compares tourist numbers across selected Malaysian states.
-    It highlights important food and tourism destinations such as Kuala Lumpur,
-    Penang, Johor, Sabah and Sarawak.
+    This bar chart ranks tourism numbers by state.
+    It supports precise comparison between locations.
   </p>
   <div id="chart5"></div>
 </div>
 
 <div class="chart">
   <span class="section-tag">Geographic Story</span>
-  <h2>6. Malaysia Tourism Map</h2>
+  <h2>6. Geographic Distribution of Tourism</h2>
   <p>
-    This choropleth map shows tourism numbers by Malaysian state. Darker orange
-    states represent higher tourist numbers, helping viewers identify major tourism
-    and food-culture hotspots.
+    This choropleth map shows tourism geographically.
+    Darker states represent higher tourist numbers.
   </p>
   <div id="chart6"></div>
 
@@ -200,8 +192,8 @@
   <span class="section-tag">Spice vs Popularity</span>
   <h2>7. Popularity and Spice Level of Malaysian Dishes</h2>
   <p>
-    This scatter plot compares dish popularity with spice level. It helps show
-    whether highly popular Malaysian dishes are usually mild, moderate or spicy.
+    This scatter plot compares dish popularity and spice level.
+    It shows whether popular dishes are mild or spicy.
   </p>
   <div id="chart7"></div>
 </div>
@@ -210,8 +202,8 @@
   <span class="section-tag">Cultural Origins</span>
   <h2>8. Cultural Origin Breakdown of Malaysian Dishes</h2>
   <p>
-    This donut chart summarises the cultural origins represented in the food dataset.
-    It highlights how Malaysia’s food identity is shaped by multiple communities.
+    This donut chart summarises dish origins.
+    It highlights Malaysia’s multicultural food identity.
   </p>
   <div id="chart8"></div>
 </div>
@@ -220,8 +212,8 @@
   <span class="section-tag">Tourism Ranking</span>
   <h2>9. Ranking of Tourism Hotspots by State</h2>
   <p>
-    This horizontal bar chart ranks states by tourist numbers, making it easier to
-    compare the strongest tourism and food-culture destinations.
+    This horizontal bar chart ranks tourism hotspots.
+    It gives an exact comparison beside the map.
   </p>
   <div id="chart9"></div>
 </div>
@@ -230,8 +222,8 @@
   <span class="section-tag">Meal Components</span>
   <h2>10. Cost Contribution by Meal Component</h2>
   <p>
-    This bar chart shows which parts of a Malaysian meal contribute most to the
-    total cost, adding an economic perspective to the food story.
+    This bar chart compares meal cost components.
+    It shows which items contribute most to price.
   </p>
   <div id="chart10"></div>
 </div>
@@ -240,9 +232,8 @@
   <span class="section-tag">Recovery Pattern</span>
   <h2>11. Tourism Recovery Pattern</h2>
   <p>
-    This area chart highlights the overall rise, fall and recovery of Malaysian
-    tourism over time, supporting the narrative that food culture is connected to
-    travel and visitor activity.
+    This area chart emphasises tourism recovery.
+    It connects food culture with travel activity.
   </p>
   <div id="chart11"></div>
 </div>
@@ -251,10 +242,9 @@
   <span class="section-tag">Final Insight</span>
   <h2>Conclusion</h2>
   <p>
-    Overall, this final visualisation shows that Malaysian food is not only about
-    taste, but also about culture, tourism, lifestyle and economy. The combination
-    of maps, rankings, time-series charts, heatmaps and categorical breakdowns
-    creates a complete scrolling data story about Malaysia’s food identity.
+    Malaysian food is more than taste. It connects culture, tourism,
+    lifestyle and economy. Together, the maps, rankings, time-series charts
+    and categorical views create a complete food identity story.
   </p>
 </div>
 
@@ -301,7 +291,8 @@ const barChart = {
     },
     "color": {
       "field": "Origin",
-      "type": "nominal"
+      "type": "nominal",
+      "scale": {"scheme": "tableau10"}
     },
     "tooltip": [
       {"field": "Dish"},
@@ -366,14 +357,12 @@ vegaEmbed("#chart2", lineChart);
 
 const donutChart = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 450,
-  "height": 350,
+  "width": 500,
+  "height": 380,
   "background": "#ffffff",
 
   "config": {
-    "view": {
-      "stroke": "transparent"
-    },
+    "view": {"stroke": "transparent"},
     "axis": {
       "labelFont": "Arial",
       "titleFont": "Arial",
@@ -391,24 +380,68 @@ const donutChart = {
   "data": {
     "url": "data/meal.csv"
   },
-  "mark": {
-    "type": "arc",
-    "innerRadius": 70
-  },
-  "encoding": {
-    "theta": {
-      "field": "Cost",
-      "type": "quantitative"
+
+  "layer": [
+    {
+      "mark": {
+        "type": "arc",
+        "innerRadius": 80,
+        "outerRadius": 145,
+        "stroke": "white"
+      },
+      "encoding": {
+        "theta": {
+          "field": "Cost",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Category",
+          "type": "nominal",
+          "scale": {"scheme": "set2"}
+        },
+        "tooltip": [
+          {"field": "Category"},
+          {"field": "Cost", "title": "Cost (RM)"}
+        ]
+      }
     },
-    "color": {
-      "field": "Category",
-      "type": "nominal"
+    {
+      "mark": {
+        "type": "text",
+        "radius": 175,
+        "fontSize": 12,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "theta": {
+          "field": "Cost",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "Category",
+          "type": "nominal"
+        }
+      }
     },
-    "tooltip": [
-      {"field": "Category"},
-      {"field": "Cost"}
-    ]
-  }
+    {
+      "data": {
+        "values": [
+          {"label": "Avg Meal", "y": -10},
+          {"label": "RM19", "y": 12}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 16,
+        "fontWeight": "bold",
+        "color": "#333333"
+      },
+      "encoding": {
+        "text": {"field": "label"},
+        "y": {"field": "y", "type": "quantitative"}
+      }
+    }
+  ]
 };
 
 vegaEmbed("#chart3", donutChart);
@@ -416,14 +449,12 @@ vegaEmbed("#chart3", donutChart);
 
 const heatmap = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 600,
-  "height": 350,
+  "width": 650,
+  "height": 380,
   "background": "#ffffff",
 
   "config": {
-    "view": {
-      "stroke": "transparent"
-    },
+    "view": {"stroke": "transparent"},
     "axis": {
       "labelFont": "Arial",
       "titleFont": "Arial",
@@ -441,20 +472,29 @@ const heatmap = {
   "data": {
     "url": "data/food.csv"
   },
-  "mark": "rect",
+
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 5
+  },
+
   "encoding": {
-    "x": {
+    "y": {
       "field": "Dish",
       "type": "nominal",
-      "axis": {"labelAngle": -45}
+      "sort": "-x",
+      "title": "Dish"
     },
-    "y": {
-      "field": "Origin",
-      "type": "nominal"
+    "x": {
+      "field": "SpiceLevel",
+      "type": "quantitative",
+      "title": "Spice Level"
     },
     "color": {
       "field": "SpiceLevel",
-      "type": "quantitative"
+      "type": "quantitative",
+      "scale": {"scheme": "oranges"},
+      "legend": {"title": "Spice"}
     },
     "tooltip": [
       {"field": "Dish"},
@@ -507,8 +547,10 @@ const tourismChart = {
       "type": "quantitative"
     },
     "color": {
-      "field": "State",
-      "type": "nominal"
+      "field": "Tourists",
+      "type": "quantitative",
+      "scale": {"scheme": "blues"},
+      "legend": {"title": "Tourists"}
     },
     "tooltip": [
       {"field": "State"},
@@ -522,9 +564,9 @@ vegaEmbed("#chart5", tourismChart);
 const mapChart = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
-  "width": 800,
-  "height": 500,
-  "background": "#ffffff",
+  "width": 900,
+  "height": 620,
+  "background": "#eaf6ff",
 
   "config": {
     "view": {
@@ -555,8 +597,8 @@ const mapChart = {
   "projection": {
     "type": "mercator",
     "center": [109, 4],
-    "scale": 2000,
-    "translate": [370, 220]
+    "scale": 2600,
+    "translate": [430, 300]
   },
 
   "transform": [
@@ -651,7 +693,8 @@ const scatterChart = {
     },
     "color": {
       "field": "Origin",
-      "type": "nominal"
+      "type": "nominal",
+      "scale": {"scheme": "tableau10"}
     },
     "tooltip": [
       {"field": "Dish"},
@@ -704,7 +747,8 @@ const originDonutChart = {
     },
     "color": {
       "field": "Origin",
-      "type": "nominal"
+      "type": "nominal",
+      "scale": {"scheme": "category20"}
     },
     "tooltip": [
       {"field": "Origin"},
@@ -762,7 +806,7 @@ const tourismRankingChart = {
     "color": {
       "field": "Tourists",
       "type": "quantitative",
-      "scale": {"scheme": "oranges"},
+      "scale": {"scheme": "blues"},
       "legend": null
     },
     "tooltip": [
@@ -821,6 +865,7 @@ const mealBarChart = {
     "color": {
       "field": "Category",
       "type": "nominal",
+      "scale": {"scheme": "set2"},
       "legend": null
     },
     "tooltip": [
@@ -878,7 +923,7 @@ const recoveryAreaChart = {
       "title": "Tourists"
     },
     "color": {
-      "value": "#f28e2b"
+      "value": "#4e79a7"
     },
     "tooltip": [
       {"field": "Year"},
